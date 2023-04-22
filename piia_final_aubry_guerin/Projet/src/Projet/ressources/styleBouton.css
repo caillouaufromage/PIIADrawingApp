@@ -1,0 +1,59 @@
+/* Centrer les boutons dans la .navbar */
+
+/*
+
+R0: J'ai retiré la gomme car je crois pas que ce soit utile
+    J'aurais bien aimé qu'on ait plusieurs boutons avec les couleurs récentes à côté du bouton palette mais je vois pas comment implémenter ça facilement donc je pense pas qu'on aura le temps
+
+R2: Utiliser une icône de pointeur plûtot ?
+R3: Idéalement il faudrait trouver une icône qui représente mieux le fait de toggle entre forme pleine/creuse
+R4: On aura probablement pas le temps de l'implémenter though (même si le laisser est une bonne idée)
+R5: Angles arrondis ou un truc du genre ? (On peut facilement faire des angles arrondis avec les formes JavaFX)
+
+*/
+
+.navbar {
+/*	-fx-alignment: center;
+    -fx-border-radius: 0 0 10 10;
+    -fx-background-radius: 0 0 10 10;	*/
+    -fx-background-color: #f2f2f2;
+    -fx-border-color: #bfbfbf;
+}
+
+.navbar.top {
+        -fx-border-width: 0 0 1px 0;
+}
+.navbar.bottom {
+        -fx-border-width: 1px 0 0 0;
+}
+
+/* Base style for stuff in navbar */
+.navbar > * {
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0 10px;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;	/* Pour retirer les bordures il faut mieux utiliser ça, mettre la couleur à "transparent" ça laisse quand même les pixels de marge */
+    -fx-background-insets: 0;
+}
+
+/* Exceptions */
+.navbar > Separator, .navbar > MenuButton, .nopadding {
+    -fx-padding: 0;
+}
+
+/* Changer la couleur de surlignage des boutons en bleu */
+.navbar > *:hover {
+    -fx-background-color: #d9d9d9;
+}
+
+/* Changer la couleur de clic des boutons en bleu */
+.navbar > *:pressed {
+    -fx-background-color: #cccccc;
+}
+
+/* Changer la couleur des boutons sélectionnés en bleu */
+.navbar > *:selected {
+    -fx-background-color: #bfbfbf;
+}
+
